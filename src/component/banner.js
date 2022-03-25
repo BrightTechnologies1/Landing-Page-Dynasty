@@ -1,9 +1,28 @@
 import React from 'react';
+import { useRef } from 'react';
+import emailjs from 'emailjs-com';
 import group6 from '../images/group6.svg';
-import pcs from '../images/pcs.svg';
+import pcs from '../images/pcs.png';
+import { CaretRightFill } from 'react-bootstrap-icons';
 import '../App.css';
 
 function Banner() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('Waitlist', 'DynastyPro', form.current, 'silascyrax@gmail.com')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
+
   return (
     <div className='header'>
       <div className='banner'>
@@ -17,9 +36,9 @@ function Banner() {
           <h4><b>Join our waitlist for updates</b></h4>
         </div>
         <div className='footer-widget-right'>
-              <form onSubmit={onclick}>
-                  <input type="text" placeholder="Email address" />
-                  <button type="submit">></button>
+              <form onSubmit={sendEmail}>
+                  <input type="email" name='Email Address' placeholder="Email address" />
+                  <button type="submit"><CaretRightFill /></button>
               </form>
           </div>
       </div>

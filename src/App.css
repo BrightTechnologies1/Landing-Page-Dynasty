@@ -79,7 +79,7 @@
 }
 
 .banner {
-  background-image: url(./images/banner.svg);
+  background-image: url(./images/banner.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,12 +173,12 @@
 
 .pcs {
   text-align: center;
-  margin-top: -100px;
+  margin-top: -95px;
 }
 
 .pcs img {
-  height: 450px;
-  width: 800px;
+  height: 436px;
+  width: 775px;
 }
 
 
@@ -277,5 +277,20 @@
     border: none;
     background: none;
     outline: none;
+  }
+}
+
+@media screen and (max-width: 596px) {
+  .banner-text h1 {
+    font-size: 45px;
+  }
+  .banner-text h3 {
+    font-size: 15px;
+    width: 300px;
+  }
+  .pcs img {
+    height: 217px;
+    width: 360px;
+    margin-top: 95px;
   }
 }
