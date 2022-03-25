@@ -38,6 +38,12 @@
   color: #040429;
 }
 
+.mobile-menu{
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
 #register a{
   color: #ffffff;
   background-color: #040429;
@@ -60,8 +66,9 @@
 }
 
 #register1 a:hover {
-  color: #040429;
-  background-color: #D6D6D6;
+  color: #ffffff;
+  background-color: #040429;
+  border: none;
 }
 
 
@@ -176,11 +183,7 @@
 
 
 
-.mobile-menu{
-  margin: 0;
-  padding: 0;
-  display: none;
-}
+
 
 
 
