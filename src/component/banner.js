@@ -1,6 +1,5 @@
 import React from 'react';
-import { useRef } from 'react';
-import emailjs from 'emailjs-com';
+import { useForm } from "react-hook-form";
 import group6 from '../images/group6.svg';
 import pcs from '../images/pcs.png';
 import { CaretRightFill } from 'react-bootstrap-icons';
@@ -8,20 +7,9 @@ import '../App.css';
 
 function Banner() {
 
-  const form = useRef();
+  const { register, handleSubmit, formState: { errors }, } = useForm();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm('Waitlist', 'DynastyPro', form.current, 'silascyrax@gmail.com')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
-
-
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div className='header'>
@@ -36,8 +24,8 @@ function Banner() {
           <h4><b>Join our waitlist for updates</b></h4>
         </div>
         <div className='footer-widget-right'>
-              <form onSubmit={sendEmail}>
-                  <input type="email" name='Email Address' placeholder="Email address" />
+              <form onSubmit={handleSubmit(onSubmit)}>
+                  <input {...register('Email')} placeholder="Email address" />
                   <button type="submit"><CaretRightFill /></button>
               </form>
           </div>
