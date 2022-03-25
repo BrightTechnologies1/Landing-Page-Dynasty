@@ -8,16 +8,15 @@ import { List } from 'react-bootstrap-icons';
 
 function Navbar() {
 
-
   const [isMobile, setIsMobile] = useState(false);
 
   return (
     <div className='navbar'>
       <button className='mobile-menu' onClick={() => setIsMobile(!isMobile)}>
         {isMobile ? (
-              <XLg style={{ color:"#000", width: "50px", height: "50px" }} />
+              <XLg style={{ color:"#000", width: "40px", height: "40px" }} />
           ) : (
-              <List style={{ color: "#000", width: "50px", height: "50px" }} />
+              <List style={{ color: "#000", width: "40px", height: "40px" }} />
           )}
       </button>
       <div className='nav-item'>
