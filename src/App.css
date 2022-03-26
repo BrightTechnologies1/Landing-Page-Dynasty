@@ -182,6 +182,23 @@
 }
 
 
+.modal {
+  justify-content: center;
+  display: flex;
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+}
+
+.modal p {
+  background-color: #0404298d;
+  position: absolute; 
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
 
 
 

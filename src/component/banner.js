@@ -10,7 +10,11 @@ function Banner() {
 
   const [state, handleSubmit] = useForm("meqnlopo");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return (
+        <div className='modal'>
+          <p>Your email address has been added to a waiting list.</p>
+        </div>
+      );
   }
 
   return (
