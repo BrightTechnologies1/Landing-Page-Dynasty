@@ -1,15 +1,17 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import { useForm, ValidationError } from '@formspree/react';
 import group6 from '../images/group6.svg';
 import pcs from '../images/pcs.png';
 import { CaretRightFill } from 'react-bootstrap-icons';
 import '../App.css';
+// import { db } from "../firebase";
 
 function Banner() {
 
-  const { register, handleSubmit, formState: { errors }, } = useForm();
-
-  const onSubmit = (data) => console.log(data);
+  const [state, handleSubmit] = useForm("meqnlopo");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
 
   return (
     <div className='header'>
@@ -24,9 +26,9 @@ function Banner() {
           <h4><b>Join our waitlist for updates</b></h4>
         </div>
         <div className='footer-widget-right'>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                  <input {...register('Email')} placeholder="Email address" />
-                  <button type="submit"><CaretRightFill /></button>
+              <form onSubmit={handleSubmit}>
+                <input placeholder="Email Address" name='email' type='email' />
+                <button type="submit" disabled={state.submitting} ><CaretRightFill /></button>
               </form>
           </div>
       </div>
