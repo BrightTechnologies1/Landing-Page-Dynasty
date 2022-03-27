@@ -4,7 +4,7 @@ import group6 from '../images/group6.svg';
 import pcs from '../images/pcs.png';
 import { CaretRightFill } from 'react-bootstrap-icons';
 import '../App.css';
-// import { db } from "../firebase";
+import gif from '../images/cheers.gif';
 
 function Banner() {
 
@@ -13,6 +13,9 @@ function Banner() {
       return (
         <div className='modal'>
           <p>Your email address has been added to a waiting list.</p>
+          <img src={gif} alt='' width={500} />
+          <h2><a href='../index.js'>Click here to go back</a></h2>
+
         </div>
       );
   }

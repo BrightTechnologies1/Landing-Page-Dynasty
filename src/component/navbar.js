@@ -20,7 +20,7 @@ function Navbar() {
           )}
       </button>
       <div className='nav-item'>
-          <img src={dynastylogo} alt="" />
+          <a href="../index.js"><img src={dynastylogo} alt="" /></a>
           <nav className={isMobile ? "navMenu-mobile" : "navMenu" } onClick={() => setIsMobile(false)} >
             <li id='register1'><a href="#">Get started</a></li>
             <li id='register'><a href="#">Pitch Deck</a></li>
