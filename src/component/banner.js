@@ -13,7 +13,7 @@ function Banner() {
       return (
         <div className='modal'>
           <p>Your email address has been added to a waiting list.</p>
-          <img src={gif} alt='' width={500} />
+          <img src={gif} alt='' width={400} />
           <h2><a href='../index.js'>Click here to go back</a></h2>
 
         </div>
